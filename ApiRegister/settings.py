@@ -64,6 +64,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",
+    "https://apiregister.onrender.com",
 ]
 
 ROOT_URLCONF = 'ApiRegister.urls'
