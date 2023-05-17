@@ -77,7 +77,6 @@ class ChangePasswordView(generics.UpdateAPIView):
 # Api Citas
 
 from .models import Users
-from .serializers import UserSerializer
 from rest_framework import viewsets 
 
 # Create your views here.
