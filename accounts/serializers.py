@@ -29,3 +29,13 @@ class ChangePasswordSerializer(serializers.Serializer):
     """
     old_password = serializers.CharField(required=True)
     new_password = serializers.CharField(required=True)
+
+# Api Citas
+
+from accounts.models import Users
+
+class UsersSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Users
+        fields = ['id_paciente','dni', 'nombre', 'apellido', 'telefono', 'correo', 'fecha', 'hora', 'mensaje', 'fecha_registro']
+

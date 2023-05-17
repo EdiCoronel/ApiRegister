@@ -5,7 +5,7 @@ from django.shortcuts import render
 from rest_framework import generics, permissions
 from rest_framework.response import Response
 from knox.models import AuthToken
-from .serializers import UserSerializer, RegisterSerializer
+from .serializers import UserSerializer, RegisterSerializer, UsersSerializer
 from django.contrib.auth import login
 
 from rest_framework.authtoken.serializers import AuthTokenSerializer
@@ -73,3 +73,15 @@ class ChangePasswordView(generics.UpdateAPIView):
             return Response(response)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+# Api Citas
+
+from .models import Users
+from .serializers import UserSerializer
+from rest_framework import viewsets 
+
+# Create your views here.
+
+class UsersViewSet(viewsets.ModelViewSet):
+    queryset = Users.objects.all()
+    serializer_class = UsersSerializer
